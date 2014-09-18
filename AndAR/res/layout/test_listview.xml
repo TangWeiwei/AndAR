@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget32"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#eae1d1"
+    android:orientation="vertical" >
+
+    <com.atr.andar.cloud.PullToRefreshView
+        android:id="@+id/main_pull_refresh_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#eae1d1"
+            android:cacheColorHint="#00000000"
+            android:clipToPadding="false"
+            android:divider="#eae1d1"
+            android:dividerHeight="8dp"
+            android:fadingEdge="none"
+            android:padding="8dp"
+            android:scrollbarStyle="outsideOverlay" />
+    </com.atr.andar.cloud.PullToRefreshView>
+
+    
+
+</LinearLayout>
