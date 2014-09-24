@@ -23,6 +23,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnLongClickListener;
@@ -42,6 +43,7 @@ public class ModelChooser extends ListActivity {
 			.getExternalStorageDirectory().getAbsolutePath()
 			+ File.separator
 			+ "Android/data/com.atr.andar/";
+	protected static final String TAG = "ModelChooser";
 	public static List<String> list_name = new ArrayList();
 
 	@Override
@@ -61,8 +63,13 @@ public class ModelChooser extends ListActivity {
 			Intent intent = new Intent(ModelChooser.this, OnlineModels.class);
 			startActivity(intent);
 		} else if (str.equals(getResources().getString(R.string.instructions))) {
-			// show the instructions activity
-			startActivity(new Intent(ModelChooser.this, Instructions.class));
+			AlertDialog.Builder builder = new Builder(ModelChooser.this);
+			builder.setMessage("本作品是由ATRer队伍开发。通过本应用，可快速进行家具的在线选购\n" +
+					"可以通过云端下载在线模型、选择心意模型" +
+					"选择完模型后，可以通过Menu对模型进行操作\n具体功能有：拖拉、翻转、缩放、拍照等功能");
+			builder.setTitle("欢迎使用在线家私应用");
+			builder.setIcon(R.drawable.atrer);
+			builder.create().show();
 		} else {
 			// load the selected internal file
 			Intent intent = new Intent(ModelChooser.this, ModelViewer.class);
@@ -249,9 +256,18 @@ public class ModelChooser extends ListActivity {
 			public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
 					final int arg2, long arg3) {
 				// TODO Auto-generated method stub
+				Log.i(TAG,arg0+"");
+				Log.i(TAG,arg1+"");
+				Log.i(TAG,arg2+"");
+				Log.i(TAG,arg3+"");
+				Item item = (Item) ModelChooser.this
+						.getListAdapter().getItem(arg2);
+				String str = item.text;
+				if(!str.equals(getResources().getString(R.string.choose_online_model)) && !str.equals(getResources().getString(R.string.instructions)))
+				{
 				AlertDialog.Builder builder = new Builder(ModelChooser.this);
-				builder.setMessage("确定删除？");
-				builder.setTitle("提示");
+				builder.setMessage("是否删除该模型");
+				builder.setTitle("删除提示");
 				builder.setPositiveButton("确定",
 						new DialogInterface.OnClickListener() {
 
@@ -292,7 +308,8 @@ public class ModelChooser extends ListActivity {
 							}
 						});
 				builder.create().show();
-				return false;
+				}
+				return true;
 			}
 		});
 		super.onResume();

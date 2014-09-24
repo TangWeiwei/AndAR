@@ -14,6 +14,10 @@ import java.net.URI;
 import java.util.Date;
 
 import com.atr.andar.cloud.ModelChooser;
+import com.atr.andar.exceptions.AndARException;
+
+import edu.dhbw.andar.ARToolkit;
+import edu.dhbw.andar.AndARActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -31,9 +35,6 @@ import android.view.SurfaceHolder;
 import android.view.View;
 import android.view.View.OnTouchListener;
 import android.widget.Toast;
-import edu.dhbw.andar.ARToolkit;
-import edu.dhbw.andar.AndARActivity;
-import edu.dhbw.andar.exceptions.AndARException;
 
 public class ModelViewer extends AndARActivity implements SurfaceHolder.Callback {
 
@@ -152,12 +153,14 @@ public class ModelViewer extends AndARActivity implements SurfaceHolder.Callback
 									model.setScale(dY/100.0f);
 						            break;
 						        case MENU_ROTATE:
-						        	model.setXrot(-1*dX);
-									model.setYrot(-1*dY);
+						        	if(dY<10)
+						        	model.setYrot(-1*dX);
+						        	if(dX<10)
+									model.setXrot(dY);
 						            break;
 						        case MENU_TRANSLATE:
-						        	model.setXpos(dY/10f);
-									model.setYpos(dX/10f);
+						        	model.setXpos(dX/10f);
+									model.setYpos(-dY/10f);
 						        	break;
 							}		
 						}

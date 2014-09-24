@@ -11,18 +11,19 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int help=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int ic_pulltorefresh_arrow=0x7f020002;
-        public static final int ic_pulltorefresh_arrow_up=0x7f020003;
-        public static final int missingimage=0x7f020004;
-        public static final int mm_btn_grey_normal=0x7f020005;
-        public static final int mm_btn_grey_press=0x7f020006;
-        public static final int open=0x7f020007;
-        public static final int rotate=0x7f020008;
-        public static final int scale=0x7f020009;
-        public static final int screenshoticon=0x7f02000a;
-        public static final int translate=0x7f02000b;
+        public static final int atrer=0x7f020000;
+        public static final int help=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int ic_pulltorefresh_arrow=0x7f020003;
+        public static final int ic_pulltorefresh_arrow_up=0x7f020004;
+        public static final int missingimage=0x7f020005;
+        public static final int mm_btn_grey_normal=0x7f020006;
+        public static final int mm_btn_grey_press=0x7f020007;
+        public static final int open=0x7f020008;
+        public static final int rotate=0x7f020009;
+        public static final int scale=0x7f02000a;
+        public static final int screenshoticon=0x7f02000b;
+        public static final int translate=0x7f02000c;
     }
     public static final class id {
         public static final int InfoText=0x7f050006;
@@ -60,16 +61,23 @@ public final class R {
         public static final int app_name=0x7f040000;
         public static final int choose_a_model=0x7f040011;
         public static final int choose_online_model=0x7f04000e;
+        public static final int description=0x7f040026;
         public static final int download=0x7f04001b;
         public static final int download_finish=0x7f04001e;
         public static final int download_ing=0x7f04001f;
         public static final int download_start=0x7f04001d;
+        public static final int error_unkown_pixel_format=0x7f040020;
         public static final int file_doesnt_exist=0x7f040004;
         public static final int have_download=0x7f04001c;
         public static final int help=0x7f040012;
         public static final int help_file=0x7f040014;
         public static final int instructions=0x7f04000f;
         public static final int loading=0x7f040009;
+        public static final int mode_bin=0x7f040025;
+        public static final int mode_contours=0x7f040024;
+        public static final int mode_edges=0x7f040023;
+        public static final int mode_gray=0x7f040022;
+        public static final int mode_rgb=0x7f040021;
         public static final int online_model=0x7f040013;
         public static final int pickfile_intent_required=0x7f040003;
         public static final int pull_to_refresh_footer_pull_label=0x7f040019;
@@ -84,6 +92,7 @@ public final class R {
         public static final int screenshotsaved=0x7f04000c;
         public static final int select_model_file=0x7f040001;
         public static final int take_screenshot=0x7f04000b;
+        public static final int takescreenshot=0x7f040027;
         public static final int translate=0x7f040007;
         public static final int unknown_file_type=0x7f040005;
         public static final int wrong_file=0x7f040010;
